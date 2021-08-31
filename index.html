@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Stock Profile Calculator</title>
+  </head>
+  <body>
+    <header>
+      <h3 class="top-subheading">STOCK PROFILE</h3>
+      <h1 class="heading">Calculator</h1>
+    </header>
+    <main class="main">
+      <div class="image-container">
+        <img
+          class="image"
+          src="https://i.ibb.co/7nB26Jp/Business-Startup-Growth-success-build-idea-innovation-man-thought-grow-smart.png"
+          alt=""
+        />
+        <div class="output"></div>
+      </div>
+      <div class="content-container">
+        <div class="input-output-container">
+          <h5 class="input-label">Initial Price</h5>
+          <input
+            class="input"
+            id="initial-price"
+            type="number"
+            placeholder="Enter initial price..."
+          />
+          <h5 class="input-label">Quantity of Stocks</h5>
+          <input
+            class="input"
+            id="stock-quantity"
+            type="number"
+            placeholder="Enter quantitiy..."
+          />
+          <h5 class="input-label">Current Price</h5>
+          <input
+            class="input"
+            id="current-price"
+            type="number"
+            placeholder="Enter current price..."
+          />
+          <button class="check-button">Calculate now</button>
+        </div>
+      </div>
+    </main>
+    <footer class="footer">
+      <h4 class="footer-heading">2021 | Mobashir Farhan</h4>
+      <div class="social-icons">
+        <a href="">
+          <i class="icon fab fa-twitter"></i>
+        </a>
+        <a href="">
+          <i class="icon fab fa-github"></i>
+        </a>
+        <a href="">
+          <i class="icon fab fa-linkedin"></i>
+        </a>
+      </div>
+    </footer>
+    <script src="app.js"></script>
+  </body>
+</html>
