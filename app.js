@@ -37,10 +37,12 @@ function calculate(initialPrice, stockQuantity, currentPrice) {
   let totalCurrentPrice = parseInt(currentPrice) * parseInt(stockQuantity);
   if (isProfit(initialPrice, stockQuantity, currentPrice)) {
     let profit = parseInt(totalCurrentPrice) - parseInt(totalPurchasePrice);
-    return profit;
+    let profitPercent = (profit / totalPurchasePrice) * 100;
+    return [profit, profitPercent];
   } else {
     let loss = parseInt(totalPurchasePrice) - parseInt(totalCurrentPrice);
-    return loss;
+    let lossPercent = (loss / totalPurchasePrice) * 100;
+    return [loss, lossPercent];
   }
 }
 
@@ -55,7 +57,7 @@ checkButton.addEventListener("click", function () {
   ) {
     if (isProfit(initialPrice, stockQuantity, currentPrice)) {
       let profit = calculate(initialPrice, stockQuantity, currentPrice);
-      output.innerText = `Woooho you earned ${profit} rupees`;
+      output.innerText = `Woooho you earned ${profit[0]} rupees which is ${profit[1]} %`;
       image.setAttribute(
         "src",
         "https://i.ibb.co/mRN6HQF/leisure-Social-meia-relax-work-laptop-computer-clock-deadline.png"
@@ -72,10 +74,10 @@ checkButton.addEventListener("click", function () {
         initialPrice = "";
         currentPrice = "";
         stockQuantity = "";
-      }, 4000);
+      }, 6000);
     } else {
       let loss = calculate(initialPrice, stockQuantity, currentPrice);
-      output.innerText = `Shit ! you lost ${loss} rupees`;
+      output.innerText = `Shit ! you lost ${loss[0]} rupees which is ${loss[1]} %`;
       image.setAttribute(
         "src",
         "https://i.ibb.co/Pj8NCM1/Business-Startup-workflow-error-exhaustion-exhausted-work-laptop-computer-support.png"
@@ -92,7 +94,7 @@ checkButton.addEventListener("click", function () {
         initialPrice = "";
         currentPrice = "";
         stockQuantity = "";
-      }, 4000);
+      }, 6000);
     }
     //  if (isLucky(userBirthdate, luckyNumber) === false) {
     //   output.innerText = `Sorry , your birthdate is not a lucky one`;
