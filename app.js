@@ -47,7 +47,12 @@ function calculate(initialPrice, stockQuantity, currentPrice) {
 // console.log(isLucky("10-10-2002", 3));
 
 checkButton.addEventListener("click", function () {
-  if (initialPrice !== "" && stockQuantity !== "" && currentPrice !== "") {
+  if (
+    initialPrice !== "" &&
+    stockQuantity !== "" &&
+    currentPrice !== "" &&
+    parseInt(initialPrice) > 0
+  ) {
     if (isProfit(initialPrice, stockQuantity, currentPrice)) {
       let profit = calculate(initialPrice, stockQuantity, currentPrice);
       output.innerText = `Woooho you earned ${profit} rupees`;
